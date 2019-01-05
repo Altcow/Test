@@ -1,0 +1,299 @@
+﻿
+@{
+    ViewBag.Title = "Maintain";
+}
+<script>
+    var oTable;
+</script>
+<section class="content-header">
+    <h1>
+        營業單位資料維護
+        <small>- Maintain</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-television"></i>營業單位資料管理</a></li>
+        <li><a href="#">營業單位資料維護</a></li>
+
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <div class="row vertical-align">
+                        <div class="col-xs-auto">地區別:</div>
+                        <div class="col-xs-2">
+                            <select name="CmbAreaType" id="CmbAreaType" class="form-control">
+                                <option selected="selected" value="001">台北市</option>
+                                <option value="002">新北市</option>
+                                <option value="003">東部金門</option>
+                                <option value="003">桃竹苗</option>
+                                <option value="003">中部地區</option>
+                                <option value="003">雲嘉南</option>
+                                <option value="003">高屏</option>
+                                <option value="003">其他</option>
+
+                            </select>
+                        </div>
+                        <div class="col-xs-auto">分行:</div>
+                        <div class="col-xs-2">
+                            <select name="CmbAd" id="CmbAd" class="form-control">
+                                <option selected="selected" value="bbb">001 總行</option>
+                                <option value="002">002 基隆分行</option>
+                                <option value="003">003 中和分行</option>
+                                <option value="004">004 南港分行</option>
+                                <option value="005">005 臺北分行</option>
+                                <option value="006">006 民權分行</option>
+                                <option value="007">007 古亭分行</option>
+                                <option value="008">008 長安分行</option>
+                                <option value="009">009 士林分行</option>
+                                <option value="010">010 三重分行</option>
+                                <option value="011">011 宜蘭分行</option>
+                                <option value="012">012 羅東分行</option>
+                                <option value="013">013 桃園分行</option>
+                                <option value="014">014 中壢分行</option>
+                                <option value="015">015 石門分行</option>
+                                <option value="016">016 新竹分行</option>
+                                <option value="017">017 竹東分行</option>
+                                <option value="018">018 花蓮分行</option>
+                                <option value="019">019 玉里分行</option>
+                                <option value="020">020 苗栗分行</option>
+                                <option value="021">021 頭份分行</option>
+                                <option value="022">022 豐原分行</option>
+                                <option value="023">023 大甲分行</option>
+                                <option value="024">024 臺中分行</option>
+                                <option value="025">025 南投分行</option>
+                                <option value="026">026 員林分行</option>
+                                <option value="027">027 斗六分行</option>
+                                <option value="028">028 北港分行</option>
+                                <option value="029">029 嘉義分行</option>
+                                <option value="030">030 新營分行</option>
+                                <option value="031">031 永康分行</option>
+                                <option value="032">032 臺南分行</option>
+                                <option value="033">033 高雄分行</option>
+                                <option value="034">034 岡山分行</option>
+                                <option value="035">035 美濃分行</option>
+                                <option value="036">036 屏東分行</option>
+                                <option value="037">037 臺東分行</option>
+                                <option value="038">038 青年分行</option>
+                                <option value="039">039 金門分行</option>
+                                <option value="040">040 澎湖分行</option>
+                                <option value="041">041 營業部</option>
+                                <option value="042">042 財務部</option>
+                                <option value="045">045 和平分行</option>
+                                <option value="046">046 潮州分行</option>
+                                <option value="047">047 彰化分行</option>
+                                <option value="048">048 中山分行</option>
+                                <option value="040">049 永和分行</option>
+                                <option value="050">050 板橋分行</option>
+                                <option value="051">051 鳳山分行</option>
+                                <option value="052">052 湖口分行</option>
+                                <option value="053">053 蘇澳分行</option>
+                                <option value="054">054 新興分行</option>
+                                <option value="055">055 西臺中分行</option>
+                                <option value="056">056 虎尾分行</option>
+                                <option value="057">057 仁愛分行</option>
+                                <option value="058">058 忠孝分行</option>
+                                <option value="059">059 中正分行</option>
+                                <option value="061">061 新店分行</option>
+                                <option value="062">062 北臺南分行</option>
+                                <option value="063">063 松山分行</option>
+                                <option value="064">064 內湖分行</option>
+                                <option value="065">065 三民分行</option>
+                                <option value="066">066 民雄分行</option>
+                                <option value="067">067 大社分行</option>
+                                <option value="069">069 前鎮分行</option>
+                                <option value="070">070 路竹分行</option>
+                                <option value="071">071 五甲分行</option>
+                                <option value="072">072 太平分行</option>
+                                <option value="073">073 正濱分行</option>
+                                <option value="074">074 敦化分行</option>
+                                <option value="075">075 信託部</option>
+                                <option value="076">076 蘆洲分行</option>
+                                <option value="077">077 北臺中分行</option>
+                                <option value="078">078 苓雅分行</option>
+                                <option value="079">079 信義分行</option>
+                                <option value="080">080 土城分行</option>
+                                <option value="081">081 淡水分行</option>
+                                <option value="082">082 草屯分行</option>
+                                <option value="083">083 東臺南分行</option>
+                                <option value="084">084 通霄分行</option>
+                                <option value="085">085 學甲分行</option>
+                                <option value="086">086 新莊分行</option>
+                                <option value="087">087 雙和分行</option>
+                                <option value="088">088 國外部</option>
+                                <option value="089">089 白河分行</option>
+                                <option value="090">090 復興分行</option>
+                                <option value="091">091 平鎮分行</option>
+                                <option value="092">092 OBU</option>
+                                <option value="093">093 文山分行</option>
+                                <option value="094">094 中港分行</option>
+                                <option value="095">095 東板橋分行</option>
+                                <option value="096">096 南崁分行</option>
+                                <option value="097">097 建國分行</option>
+                                <option value="098">098 樹林分行</option>
+                                <option value="099">099 東台北分行</option>
+                                <option value="100">100 西三重分行</option>
+                                <option value="101">101 南臺中分行</option>
+                                <option value="102">102 長春分行</option>
+                                <option value="103">103 東新竹分行</option>
+                                <option value="104">104 新市分行</option>
+                                <option value="105">105 博愛分行</option>
+                                <option value="106">106 中崙分行</option>
+                                <option value="107">107 華江分行</option>
+                                <option value="108">108 竹北分行</option>
+                                <option value="109">109 安平分行</option>
+                                <option value="110">110 嘉興分行</option>
+                                <option value="111">111 南新莊分行</option>
+                                <option value="112">112 三峽分行</option>
+                                <option value="113">113 沙鹿分行</option>
+                                <option value="114">114 南桃園分行</option>
+                                <option value="115">115 汐止分行</option>
+                                <option value="116">116 萬華分行</option>
+                                <option value="117">117 小港分行</option>
+                                <option value="118">118 新工分行</option>
+                                <option value="119">119 烏日分行</option>
+                                <option value="120">120 西湖分行</option>
+                                <option value="121">121 八德分行</option>
+                                <option value="122">122 北屯分行</option>
+                                <option value="123">123 大安分行</option>
+                                <option value="124">124 北中壢分行</option>
+                                <option value="125">125 高樹分行</option>
+                                <option value="126">126 枋寮分行</option>
+                                <option value="128">128 金城分行</option>
+                                <option value="129">129 光復分行</option>
+                                <option value="130">130 左營分行</option>
+                                <option value="131">131 北桃園分行</option>
+                                <option value="132">132 東港分行</option>
+                                <option value="133">133 天母分行</option>
+                                <option value="134">134 泰山分行</option>
+                                <option value="135">135 中科分行</option>
+                                <option value="136">136 大園分行</option>
+                                <option value="137">137 楊梅分行</option>
+                                <option value="138">138 東門分行</option>
+                                <option value="140">140 城東分行</option>
+                                <option value="141">141 松南分行</option>
+                                <option value="142">142 福興分行</option>
+                                <option value="143">143 林口分行</option>
+                                <option value="144">144 西屯分行</option>
+                                <option value="145">145 內壢分行</option>
+                                <option value="146">146 竹南分行</option>
+                                <option value="147">147 安南分行</option>
+                                <option value="148">148 汐科分行</option>
+                                <option value="149">149 楠梓分行</option>
+                                <option value="150">150 大里分行</option>
+                                <option value="151">151 大灣分行</option>
+                                <option value="153">153 大發分行</option>
+                                <option value="155">155 圓山分行</option>
+                                <option value="156">156 工研院分行</option>
+                                <option value="157">157 北三重分行</option>
+                                <option value="158">158 圓通分行</option>
+                                <option value="160">160 大直分行</option>
+                                <option value="161">161 南屯分行</option>
+                                <option value="162">162 證券部</option>
+                                <option value="163">163 寶中分行</option>
+                                <option value="164">164 中清分行</option>
+                                <option value="165">165 南京東路分行</option>
+                                <option value="166">166 仁武分行</option>
+                                <option value="501">501 洛杉磯</option>
+                                <option value="502">502 香港</option>
+                                <option value="503">503 新加坡</option>
+                                <option value="504">504 上海</option>
+                                <option value="506">506 紐約</option>
+                                <option value="507">507 天津行</option>
+                                <option value="508">508 武漢分行</option>
+                                <option value="833">833 保險經紀</option>
+                                <option value="996">996 外匯調整數</option>
+                                <option value="997">997 農漁會等同業活存調整數</option>
+
+                            </select>
+                        </div>
+                        <div class="col-xs-auto">考核組別:</div>
+                        <div class="col-xs-2">
+                            <select name="CmbGroupType" id="CmbGroupType" class="form-control">
+                                <option selected="selected" value="001">第一組</option>
+                                <option value="002">第二組</option>
+                                <option value="003">第三組</option>
+                                <option value="003">第四組</option>
+                                <option value="003">第五組</option>
+                                <option value="003">第六組</option>
+                                <option value="003">第七組</option>
+
+                            </select>
+                        </div>
+                        <div class="col-xs-auto "><button type="button" class="btn btn-primary btn-space" onclick=" oTable.ajax.reload( null, false ); ">查 詢</button></div>
+                        <div class="col-xs-auto"><button type="button" class="btn btn-primary btn-space">新增營業單位</button></div>
+                        <div class="col-xs-auto"><button type="button" class="btn btn-warning">匯入資料</button></div>
+                    </div>
+                   
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                        </thead>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+         
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<script>
+    $('#Maintain').addClass('active');
+    $('#Maintain').closest('ul').closest('li').addClass('active');
+   
+   
+    var TableOptions = {
+        "destroy": true,
+        "oLanguage": {
+            "sUrl": "../Content/datatables.net/tw.txt"
+        },
+        "bLengthChange": false,
+        "ordering": true,
+        "searching": false,
+        "iDisplayLength": 10,
+        "bStateSave": false,
+        "bPaginate": true,
+        "scrollY": ($(window).height() - 290),
+        "scrollX": true,
+        "bProcessing": true,
+        "bServerSide": true,
+        "sAjaxSource": "MaintainJson",
+        "fnServerParams": function (aoData) {
+            aoData.push({ "name": "CmbAreaType", "value": $('#CmbAreaType').val()  });
+            aoData.push({ "name": "CmbAd", "value": $('#CmbAd').val() });
+            aoData.push({ "name": "CmbGroupType", "value": $('#CmbGroupType').val() });
+        },
+        "columns": [
+            {
+                "title": "SID", "data": "SID", "width": "200px", render: function (data, type, row) {
+                    return '<a href="Maintain?SID=' + row.SID + '">' + row.Subject + '</a>';
+                }},
+            { "title": "Subject", "data": "Subject", "width": "200px" },
+            { "title": "UpID", "data": "UpID", "width": "200px" },
+            { "title": "Distribution", "data": "Distribution", "width": "200px" },
+            { "title": "Level", "data": "Level", "width": "200px" }],
+            "fnServerData": function (sSource, aoData, fnCallback) {
+            $.ajax({
+                "dataType": 'json',
+                "contentType": "application/json; charset=utf-8",
+                "type": "GET",
+                "url": sSource,
+                "data": aoData,
+                "success":
+                    function (msg) {
+                        fnCallback(msg);
+
+                    }
+            });
+        }
+    }
+    oTable= $('#example2').DataTable(TableOptions);
+   
+</script>
+

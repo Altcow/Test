@@ -1,0 +1,184 @@
+﻿@{ 
+    var acService = new LandMVC.Service.AccountService();
+    var sUser = acService.GetValue("Account") + " [ " + acService.GetValue("UserName") + " ] ";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>土地銀行 - 營業單位營運資訊管理系統</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/js")
+    <style>
+        .vertical-align {
+            display: flex;
+            align-items: center;
+            margin-left:10px;
+        }
+        .btn-space {
+            margin-right: 5px;
+        }
+        .box {
+            margin-bottom: 0px !important;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!-- Main Header -->
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>營管</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>營業單位營運資訊管理系統</b></span>
+            </a>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">@sUser<i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-television"></i><span>營業單位資料管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="Maintain"><a href="@Url.Content("~/BusinessUT/Maintain")"><i class="fa fa-caret-right"></i>營業單位資料維護</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>營業單位資料查詢</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-area-chart"></i><span>經營績效考核</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-caret-right"></i>管理績效考核項目</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>管理續效考核項目維護</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>業績考核項目設定</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>業績考核配分上傅</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>業績考核作業</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-file-text-o"></i><span>報表查詢</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-caret-right"></i>經營縝效考核配分查詢</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>檔案管理</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>作業流程與追蹤管控</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>報表查詢</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-history"></i><span>歷史資料查詢</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-caret-right"></i>歷史資料查詢</a></li>
+
+                        </ul>
+                    </li>
+                     <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-edit"></i><span>系統管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-caret-right"></i>系統設定</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>批次作業管理</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>操作紀錄查詢</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-expeditedssl"></i><span>權限管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-caret-right"></i>管理者帳號維護</a></li>
+                        </ul>
+                    </li>
+                     <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-wordpress"></i><span>修改密碼</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-caret-right"></i>帳號密碼修改</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-user"></i><span>登出</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-caret-right"></i>登出帳號</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+
+            <!-- Main content -->
+            <section class="content container-fluid">
+                @RenderBody()
+            </section>
+            <!-- /.content -->
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
